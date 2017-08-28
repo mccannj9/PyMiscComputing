@@ -15,7 +15,7 @@ class Memoize(object):
         
 
 @Memoize
-def dynamic_fib(term):
+def memoization_fib(term):
     if term < 2:
         return 1
 
@@ -29,7 +29,7 @@ def recursive_fib(term):
     return recursive_fib(term - 1) + recursive_fib(term - 2)
 
 
-def iterative_fib(term):
+def tabulation_fib(term):
     if term < 2:
         return term
 
@@ -43,10 +43,10 @@ def main():
 
     for x in range(0, 10):
         u = recursive_fib(x)
-        v = iterative_fib(x)
-        w = dynamic_fib(x-1)
+        v = tabulation_fib(x)
+        w = memoization_fib(x-1)
 
-        print("rec = %s ::: iter = %s ::: dyn = %s" % (u,v,w))
+        print("rec = %s ::: tab = %s ::: mem = %s" % (u,v,w))
 
 
 if __name__ == '__main__':

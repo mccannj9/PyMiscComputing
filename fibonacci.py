@@ -34,11 +34,9 @@ def iterative_fib(term):
         return term
 
     fib = [0,1]
-
     for x in range(2, term + 1):
         fib.append(fib[x - 1] + fib[x - 2])
     return fib[term]
-
 
 
 def main():

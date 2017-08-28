@@ -4,7 +4,6 @@
 class Memoize(object):
     """docstring for Memoize"""
     def __init__(self, func):
-        # super(Memoize, self).__init__()
         self.func = func
         self.cache = {}
     def __call__(self, *args):
@@ -32,22 +31,22 @@ def recursive_fib(term):
 
 def iterative_fib(term):
     if term < 2:
-        return n
+        return term
 
     fib = [0,1]
 
     for x in range(2, term + 1):
-        fib.append(fib[x-1]+fib[x-2])
+        fib.append(fib[x - 1] + fib[x - 2])
     return fib[term]
 
 
 
 def main():
 
-    for x in range(5, 10):
+    for x in range(0, 10):
         u = recursive_fib(x)
         v = iterative_fib(x)
-        w = dynamic_fib(x)
+        w = dynamic_fib(x-1)
 
         print("rec = %s ::: iter = %s ::: dyn = %s" % (u,v,w))
 

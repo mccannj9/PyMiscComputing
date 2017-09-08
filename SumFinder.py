@@ -6,7 +6,7 @@ def time_it(f, *args):
     start = time.clock()
     f(*args)
     total_time = (time.clock() - start)*1000
-    return "Process took %s milliseconds."
+    return "Process took %s milliseconds." % total_time
 
 
 def find_sum_quadratic(value, numbers):
@@ -22,20 +22,26 @@ def find_sum_quadratic(value, numbers):
             if x + y == value:
                 return x, y
 
-    return -1
+    return ()
 
 def find_sum_linear(value, numbers):
+    original = set(numbers)
     complement = set()
     for addend in original:
-        complement.add(value-addend)
-    for addend in complement:
-        if addend in original:
+        if value-addend in original:
             return (addend, value-addend)
-    return 0
+    return ()
 
 
 def main():
-    print(find_sum_quadratic(7, [1,2,3,4]))
+    import random
+    randints = [random.randint(0,20000) for x in range(200)]
+
+    print(time_it(find_sum_quadratic, 20000, randints))
+    print(time_it(find_sum_linear, 20000, randints))
+
+    print(time_it(find_sum_quadratic, 7, [1,2,3,4]))
+    print(time_it(find_sum_linear, 7, [1,2,3,4]))
 
 
 if __name__ == '__main__':

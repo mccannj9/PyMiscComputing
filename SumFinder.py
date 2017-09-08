@@ -16,6 +16,15 @@ def find_sum_quadratic(value, numbers):
 
     return -1
 
+def find_sum_linear(value, numbers):
+    original = set(numbers)
+    complement = set()
+    for addend in original:
+        complement.add(value-addend)
+    return 0
+
+
+
 
 def main():
     print(find_sum_quadratic(7, [1,2,3,4]))

@@ -35,10 +35,10 @@ def find_sum_linear(value, numbers):
 
 def main():
     import random
-    randints = [random.randint(0,20000) for x in range(200)]
+    randints = [random.randint(0,2000000) for x in range(20000)]
 
-    print(time_it(find_sum_quadratic, 20000, randints))
-    print(time_it(find_sum_linear, 20000, randints))
+    print(time_it(find_sum_quadratic, 2000000, randints))
+    print(time_it(find_sum_linear, 2000000, randints))
 
     print(time_it(find_sum_quadratic, 7, [1,2,3,4]))
     print(time_it(find_sum_linear, 7, [1,2,3,4]))

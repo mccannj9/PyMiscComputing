@@ -12,7 +12,7 @@ def time_it(f, *args):
 def find_sum_quadratic(value, numbers):
 
     """ quadratic solution to sum finder problem """
-    
+    print(value)
     for i in range(0, len(numbers)-1):
         x = numbers[i]
         
@@ -20,16 +20,20 @@ def find_sum_quadratic(value, numbers):
             y = numbers[j]
 
             if x + y == value:
+                print((x, y))
                 return x, y
-
+    print(())
     return ()
 
 def find_sum_linear(value, numbers):
     original = set(numbers)
-    complement = set()
+    print(value)
+    # complement = set()
     for addend in original:
         if value-addend in original:
+            print((addend, value-addend))
             return (addend, value-addend)
+    print(())
     return ()
 
 

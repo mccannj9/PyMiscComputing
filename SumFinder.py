@@ -15,7 +15,7 @@ def find_sum_quadratic(value, numbers):
     print(value)
     for i in range(0, len(numbers)-1):
         x = numbers[i]
-        
+
         for j in range(i+1, len(numbers)):
             y = numbers[j]
 
